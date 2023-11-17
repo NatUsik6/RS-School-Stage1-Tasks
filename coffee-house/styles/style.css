@@ -1,0 +1,110 @@
+.header {
+  background-color: #E1D4C9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-container-list__link,
+.coffee-menu__link {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #403F3D;
+}
+
+.coffee-menu {
+  display: flex;
+  gap: 8px;
+}
+
+.hero-container {
+  background: url(/coffee-house/images/img-hero.png), lightgray 50%/cover no-repeat;
+  border-radius: 40px;
+  padding: 100px;
+}
+
+.hero-container-offer {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  height: auto;
+  gap: 40px;
+}
+
+.hero-container-offer__title {
+  font-family: Inter;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 105%;
+  color: #E1D4C9;
+}
+.hero-container-offer__title_text-accent {
+  font-style: italic;
+  color: #B0907A;
+}
+
+.hero-container-offer__description {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #E1D4C9;
+}
+
+.hero-container-offer__button {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #403F3D;
+  background-color: #E1D4C9;
+  border-radius: 100px;
+  padding: 20px 78px;
+  width: 200px;
+  border: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #E1D4C9;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1360px;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
