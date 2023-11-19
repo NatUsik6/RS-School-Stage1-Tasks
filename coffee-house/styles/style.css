@@ -85,6 +85,186 @@
   border: 0;
 }
 
+.favorite-coffee__container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.favorite-coffee__title {
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #403F3D;
+  text-align: center;
+}
+.favorite-coffee__title_text-accent {
+  font-style: italic;
+  color: #B0907A;
+}
+
+.favorite-coffee__slider {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.favorite-coffee__slider__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorite-coffee__slider__container__left-arrow-button,
+.favorite-coffee__slider__container__right-arrow-button {
+  border-radius: 100px;
+  border: 1px solid #665F55;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+}
+
+.coffee {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+}
+
+.coffee__image {
+  width: 480px;
+  height: 480px;
+}
+
+.coffee__description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.coffee__description__title {
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #403F3D;
+  text-align: center;
+}
+
+.coffee__description__text {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  color: #403F3D;
+  text-align: center;
+}
+
+.coffee__description__cost {
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #403F3D;
+  text-align: center;
+}
+
+.favorite-coffee__slider__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.favorite-coffee__slider__controls_page1,
+.favorite-coffee__slider__controls_page2,
+.favorite-coffee__slider__controls_page3 {
+  width: 40px;
+  height: 4px;
+  background: #665F55;
+  border-radius: 100px;
+}
+
+.about__description {
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #403F3D;
+}
+.about__description_text-accent {
+  font-style: italic;
+  color: #B0907A;
+}
+
+.about__images-container {
+  display: flex;
+  gap: 40px;
+}
+
+.about__images__column1,
+.about__images__column2 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-image {
+  width: 660px;
+  border-radius: 20px;
+}
+
+.about__images__about1 {
+  background: url(/coffee-house/images/about-1.png);
+  background-position: center;
+  height: 590px;
+}
+
+.about__images__about2 {
+  background: url(/coffee-house/images/about-2.png);
+  background-position: center;
+  height: 430px;
+}
+
+.about__images__about3 {
+  background: url(/coffee-house/images/about-3.png);
+  background-position: center;
+  height: 430px;
+}
+
+.about__images__about4 {
+  background: url(/coffee-house/images/about-4.png);
+  background-position: center;
+  height: 590px;
+}
+
+.description-download__title {
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #403F3D;
+}
+.description-download__title_text-accent {
+  font-style: italic;
+  color: #B0907A;
+}
+
+.description-download__offer {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #403F3D;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -104,7 +284,19 @@ a {
   text-decoration: none;
 }
 
+.main {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
 .container {
   max-width: 1360px;
   width: 100%;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

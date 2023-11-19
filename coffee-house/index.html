@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/coffee-cup.ico">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,10 +64,10 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="favorite-coffee">
+    <main class="main">
+        <section class="section favorite-coffee">
             <div class="container favorite-coffee__container">
-                <p class="favorite-coffee__title">Choose your favorite coffee</p>
+                <p class="favorite-coffee__title">Choose your <span class="favorite-coffee__title_text-accent">favorite</span> coffee</p>
                 <div class="favorite-coffee__slider">
                     <div class="favorite-coffee__slider__container">
                         <button class="favorite-coffee__slider__container__left-arrow-button">
@@ -75,9 +76,7 @@
                                 </svg>
                         </button>
                         <div class="coffee">
-                            <div class="coffee__image">
-                                <img class="coffee__image_frappuccino" src="/coffee-house/images/coffee-slider-1.png" alt="S’mores Frappuccino">
-                            </div>
+                            <img class="coffee__image" src="/coffee-house/images/coffee-slider-1.png" alt="S’mores Frappuccino">
                             <div class="coffee__description">
                                 <p class="coffee__description__title">S’mores Frappuccino</p>
                                 <p class="coffee__description__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
@@ -90,7 +89,41 @@
                               </svg>
                         </button>
                     </div>
-                    <div class="favorite-coffee__slider__controls"></div>
+                    <div class="favorite-coffee__slider__controls">
+                        <div class="favorite-coffee__slider__controls_page1"></div>
+                        <div class="favorite-coffee__slider__controls_page2"></div>
+                        <div class="favorite-coffee__slider__controls_page3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section about">
+            <div class="container about__container">
+                <p class="about__description">Resource is<span class="about__description_text-accent"> the perfect and cozy place</span> where you can enjoy a variety of coffee beverages, to relax, catch up with friends, or get some work done.</p>
+                <div class="about__images-container">
+                    <div class="about__images__column1">
+                        <div class="about-image about__images__about1"></div>
+                        <div class="about-image about__images__about2"></div>
+                    </div>
+                    <div class="about__images__column2">
+                        <div class="about-image about__images__about3"></div>
+                        <div class="about-image about__images__about4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section mobile-app">
+            <div class="container mobile-app__container">
+                <div class="description-download">
+                    <p class="description-download__title"><span class="description-download__title_text-accent">Download</span>  Apps To Facilitate Ordering</p>
+                    <p class="description-download__offer">Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are</p>
+                    <div class="description-download__button">
+                        <button class="description-download__button__download-button description-download__button__button-for-app-store"></button>
+                        <button class="description-download__button__download-button description-download__button__button-for-google-store"></button>
+                    </div>
+                </div>
+                <div class="mobile-screens">
+                    <img src="images/mobile-screens.png" alt="Iphones with screenshots" class="moile-screens__image">
                 </div>
             </div>
         </section>

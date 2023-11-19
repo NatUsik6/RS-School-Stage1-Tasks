@@ -1,26 +1,7 @@
 @import "scss/constants";
+@import "scss/mixins";
 @import "scss/header";
-
-* {
-    margin: 0;
-    padding: 0;
-    transition: .3s;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: $background-light;
-}
-
-a {
-    text-decoration: none;
-}
-
-.container {
-    max-width: 1360px;
-    width: 100%;
-}
+@import "scss/favorite-coffee";
+@import "scss/about";
+@import "scss/mobile-app";
+@import "scss/common";

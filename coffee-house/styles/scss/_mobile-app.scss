@@ -1,0 +1,17 @@
+.description-download__title {
+    @include font(60px, 125%, $text-dark);
+
+    &_text-accent {
+        font-style: italic;
+        color: $text-accent;
+    }
+}
+
+.description-download__offer {
+    @include font(16px, 150%, $text-dark);
+
+}
+
+.description-download__button__download-button {
+
+}
