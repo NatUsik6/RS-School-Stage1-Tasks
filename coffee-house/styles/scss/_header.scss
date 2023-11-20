@@ -20,14 +20,24 @@
     list-style: none;
 }
 
-.nav-container-list__link,
-.coffee-menu__link {
+.nav-container-list__link {
     @include font(16px, 150%, $text-dark);
 }
 
-.coffee-menu {
+.coffee-menu-link {
+    @include font(16px, 150%, $text-dark);
     display: flex;
     gap: 8px;
+    position: relative;
+
+    &_active::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: $text-dark;
+        bottom: -3px;
+    }
 }
 
 .hero-container {
@@ -59,7 +69,7 @@
 
 .hero-container-offer__button {
     @include font(16px, 150%, $text-dark);
-    
+
     background-color: $background-light;
     border-radius: 100px;
     padding: 20px 78px;
