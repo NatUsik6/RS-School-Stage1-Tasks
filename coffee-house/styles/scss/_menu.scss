@@ -24,16 +24,39 @@
     }
 }
 
-.menu-container__button {
-    display: flex;
-    gap: 8px;
-    border-radius: 100px;
-    background: $border-container
+.menu-container__radio {
+    display: none;
 }
 
-.menu-container__button__icon {
+.menu-container__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px 8px 8px;
     border-radius: 100px;
-    background: $background-light;
+    border: 1px solid $border-light;
+    background: transparent;
+
+    .menu-container__radio:checked + & {
+        background: $border-container;
+
+        .menu-container__button__icon-circle {
+            fill: $background-light;
+        }
+
+        .menu-container__button__text {
+            color: $text-light;
+        }
+    }
+}
+
+.menu-container__button__icon-circle {
+    fill: $border-light;
+}
+
+.menu-container__button__text {
+    @include font(16px, 150%, $text-dark);
 }
 
 .menu-container__buttons-container {

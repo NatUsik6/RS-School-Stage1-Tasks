@@ -1,0 +1,45 @@
+$menu-image-size: 310px;
+
+.card {
+    border-radius: 40px;
+    border: 1px solid $border-light;
+    width: 310px;
+    height: 506px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card__image {
+    background: url(/coffee-house/images/coffee-1.png) no-repeat center;
+    background-size: cover;
+    width: $menu-image-size;
+    height: $menu-image-size;
+    border-radius: 40px;
+}
+
+.card__caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.card__description {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card__description__title {
+    @include font(24px, 125%, $text-dark);
+}
+
+.card__description__text {
+    @include font(16px, 150%, $text-dark, 400);
+}
+
+.card__cost {
+    @include font(24px, 125%, $text-dark);
+}
