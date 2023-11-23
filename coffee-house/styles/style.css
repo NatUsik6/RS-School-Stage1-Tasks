@@ -27,6 +27,20 @@
   font-weight: 600;
   line-height: 150%;
   color: #403F3D;
+  position: relative;
+}
+.nav-container-list__link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #403F3D;
+  bottom: -3px;
+  left: 0;
+  transition: 0.3s;
+}
+.nav-container-list__link:hover:after {
+  width: 100%;
 }
 
 .coffee-menu-link {
@@ -40,13 +54,18 @@
   gap: 8px;
   position: relative;
 }
-.coffee-menu-link_active::after {
+.coffee-menu-link:after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 2px;
   background: #403F3D;
   bottom: -3px;
+  left: 0;
+  transition: 0.3s;
+}
+.coffee-menu-link_active:after, .coffee-menu-link:hover:after {
+  width: 100%;
 }
 
 .hero-container {
@@ -94,9 +113,20 @@
   color: #403F3D;
   background-color: #E1D4C9;
   border-radius: 100px;
-  padding: 20px 78px;
+  padding: 20px 0;
   width: 200px;
   border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.hero-container-offer__button:hover .hero-container-offer__button__icon {
+  width: 20px;
+}
+
+.hero-container-offer__button__icon {
+  width: 0;
 }
 
 .favorite-coffee__container {
@@ -133,11 +163,23 @@
 
 .favorite-coffee__slider__container__left-arrow-button,
 .favorite-coffee__slider__container__right-arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   border: 1px solid #665F55;
   width: 60px;
   height: 60px;
   background: transparent;
+  cursor: pointer;
+}
+.favorite-coffee__slider__container__left-arrow-button:hover,
+.favorite-coffee__slider__container__right-arrow-button:hover {
+  background-color: #665F55;
+}
+.favorite-coffee__slider__container__left-arrow-button:hover .favorite-coffee__slider__container__arrow-button__icon,
+.favorite-coffee__slider__container__right-arrow-button:hover .favorite-coffee__slider__container__arrow-button__icon {
+  stroke: #E1D4C9;
 }
 
 .coffee {
@@ -194,12 +236,18 @@
   gap: 12px;
 }
 
-.favorite-coffee__slider__controls_page1,
+.favorite-coffee__slider__controls_page1 {
+  width: 40px;
+  height: 4px;
+  background: #665F55;
+  border-radius: 100px;
+}
+
 .favorite-coffee__slider__controls_page2,
 .favorite-coffee__slider__controls_page3 {
   width: 40px;
   height: 4px;
-  background: #665F55;
+  background: #C1B6AD;
   border-radius: 100px;
 }
 
@@ -382,6 +430,9 @@
   justify-content: center;
   align-items: center;
 }
+.contacts__offer__socials__button svg:hover {
+  background: #E1D4C9;
+}
 
 .contacts__info {
   width: 100%;
@@ -407,18 +458,35 @@
   gap: 16px;
 }
 
-.contacts__info__container_link {
+.contacts__info__container__item,
+.contacts__info__container__link {
   display: flex;
   gap: 8px;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-.contacts__info__container_link__title {
+.contacts__info__container__link:hover:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #E1D4C9;
+  bottom: -3px;
+}
+
+.contacts__info__container__link__title {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
   color: #E1D4C9;
+}
+
+.coffee-menu-link_active {
+  cursor: default;
 }
 
 .main {
@@ -464,14 +532,15 @@
   border-radius: 100px;
   border: 1px solid #C1B6AD;
   background: transparent;
+  cursor: pointer;
 }
-.menu-container__radio:checked + .menu-container__button {
+.menu-container__button:hover, .menu-container__radio:checked + .menu-container__button {
   background: #665F55;
 }
-.menu-container__radio:checked + .menu-container__button .menu-container__button__icon-circle {
+.menu-container__button:hover .menu-container__button__icon-circle, .menu-container__radio:checked + .menu-container__button .menu-container__button__icon-circle {
   fill: #E1D4C9;
 }
-.menu-container__radio:checked + .menu-container__button .menu-container__button__text {
+.menu-container__button:hover .menu-container__button__text, .menu-container__radio:checked + .menu-container__button .menu-container__button__text {
   color: #E1D4C9;
 }
 
@@ -492,6 +561,11 @@
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .card {

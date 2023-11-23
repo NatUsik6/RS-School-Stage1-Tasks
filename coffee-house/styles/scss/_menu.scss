@@ -1,3 +1,7 @@
+.coffee-menu-link_active {
+    cursor: default;
+}
+
 .main {
     display: flex;
     align-items: center;
@@ -37,7 +41,9 @@
     border-radius: 100px;
     border: 1px solid $border-light;
     background: transparent;
+    cursor: pointer;
 
+    &:hover,
     .menu-container__radio:checked + & {
         background: $border-container;
 
@@ -63,4 +69,9 @@
     display: flex;
     justify-content: center;
     gap: 16px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }

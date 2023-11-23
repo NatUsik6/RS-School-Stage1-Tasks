@@ -22,6 +22,22 @@
 
 .nav-container-list__link {
     @include font(16px, 150%, $text-dark);
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: $text-dark;
+        bottom: -3px;
+        left: 0;
+        transition: .3s;
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
 }
 
 .coffee-menu-link {
@@ -30,13 +46,20 @@
     gap: 8px;
     position: relative;
 
-    &_active::after {
+    &:after {
         content: "";
         position: absolute;
-        width: 100%;
+        width: 0;
         height: 2px;
         background: $text-dark;
         bottom: -3px;
+        left: 0;
+        transition: .3s;
+    }
+
+    &_active:after,
+    &:hover:after {
+        width: 100%;
     }
 }
 
@@ -72,7 +95,19 @@
 
     background-color: $background-light;
     border-radius: 100px;
-    padding: 20px 78px;
+    padding: 20px 0;
     width: 200px;
     border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover .hero-container-offer__button__icon {
+        width: 20px;
+    }
+}
+
+.hero-container-offer__button__icon {
+    width: 0;
 }
