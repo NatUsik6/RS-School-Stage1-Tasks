@@ -1,0 +1,124 @@
+.header {
+    background-color: $background-light;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    height: 60px;
+}
+
+.nav-container-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    padding-bottom: 4px;
+}
+
+.nav-container-list__link {
+    @include font(16px, 150%, $text-dark);
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: $text-dark;
+        bottom: -3px;
+        left: 0;
+        transition: .3s;
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
+}
+
+.coffee-menu-link {
+    @include font(16px, 150%, $text-dark);
+    display: flex;
+    gap: 8px;
+    position: relative;
+    padding-bottom: 4px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: $text-dark;
+        bottom: 1px;
+        left: 0;
+        transition: .3s;
+    }
+
+    &_active:after,
+    &:hover:after {
+        width: 100%;
+    }
+}
+
+.hero-container {
+    background: url(/coffee-house/images/img-hero.png) center;
+    background-size: 100%;
+    border-radius: 40px;
+    padding: 100px;
+}
+
+.hero-container-offer {
+    display: flex;
+    flex-direction: column;
+    width: 540px;
+    height: auto;
+    gap: 40px;
+}
+
+.hero-container-offer__title {
+    @include font(72px, 105%, $text-light);
+
+    &_text-accent {
+        font-style: italic;
+        color: $text-accent;
+    }
+}
+
+.hero-container-offer__description {
+    @include font(16px, 150%, $text-light, 400);
+}
+
+.hero-container-offer__button {
+    @include font(16px, 150%, $text-dark);
+
+    background-color: $background-light;
+    border-radius: 100px;
+    padding: 20px 0;
+    width: 200px;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+
+    &:hover {
+        gap: 8px;
+
+        .hero-container-offer__button__icon {
+            width: 20px;
+        }
+    }
+}
+
+.hero-container-offer__button__icon {
+    width: 0;
+}

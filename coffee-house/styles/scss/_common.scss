@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: .3s ease-in-out;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $background-light;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.container {
+    max-width: 1360px;
+    width: 100%;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
