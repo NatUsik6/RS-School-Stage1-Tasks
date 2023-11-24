@@ -1,3 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #E1D4C9;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.container {
+  max-width: 1360px;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .header {
   background-color: #E1D4C9;
   display: flex;
@@ -13,11 +50,16 @@
   align-items: center;
 }
 
+.logo-container {
+  height: 60px;
+}
+
 .nav-container-list {
   display: flex;
   justify-content: center;
   gap: 40px;
   list-style: none;
+  padding-bottom: 4px;
 }
 
 .nav-container-list__link {
@@ -53,6 +95,7 @@
   display: flex;
   gap: 8px;
   position: relative;
+  padding-bottom: 4px;
 }
 .coffee-menu-link:after {
   content: "";
@@ -60,7 +103,7 @@
   width: 0;
   height: 2px;
   background: #403F3D;
-  bottom: -3px;
+  bottom: 1px;
   left: 0;
   transition: 0.3s;
 }
@@ -69,7 +112,8 @@
 }
 
 .hero-container {
-  background: url(/coffee-house/images/img-hero.png), lightgray 50%/cover no-repeat;
+  background: url(/coffee-house/images/img-hero.png) center;
+  background-size: 100%;
   border-radius: 40px;
   padding: 100px;
 }
@@ -119,6 +163,9 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+  gap: 0;
+}
+.hero-container-offer__button:hover {
   gap: 8px;
 }
 .hero-container-offer__button:hover .hero-container-offer__button__icon {
@@ -186,6 +233,7 @@
   display: flex;
   flex-direction: column;
   width: 480px;
+  gap: 20px;
 }
 
 .coffee__image {
@@ -214,7 +262,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 125%;
+  line-height: 150%;
   color: #403F3D;
   text-align: center;
 }
@@ -251,6 +299,12 @@
   border-radius: 100px;
 }
 
+.about__container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .about__description {
   font-family: Inter;
   font-size: 60px;
@@ -279,28 +333,32 @@
 .about-image {
   width: 660px;
   border-radius: 20px;
+  background-size: 110%;
+}
+.about-image:hover {
+  background-size: 100%;
 }
 
 .about__images__about1 {
-  background: url(/coffee-house/images/about-1.png);
+  background-image: url(/coffee-house/images/about-1.png);
   background-position: center;
   height: 590px;
 }
 
 .about__images__about2 {
-  background: url(/coffee-house/images/about-2.png);
+  background-image: url(/coffee-house/images/about-2.png);
   background-position: center;
   height: 430px;
 }
 
 .about__images__about3 {
-  background: url(/coffee-house/images/about-3.png);
+  background-image: url(/coffee-house/images/about-3.png);
   background-position: center;
   height: 430px;
 }
 
 .about__images__about4 {
-  background: url(/coffee-house/images/about-4.png);
+  background-image: url(/coffee-house/images/about-4.png);
   background-position: center;
   height: 590px;
 }
@@ -353,7 +411,19 @@
   border: 1px solid #665F55;
   background: transparent;
   display: flex;
+  align-items: center;
   gap: 8px;
+  cursor: pointer;
+}
+.mobile-app__download-button:hover {
+  background-color: #665F55;
+}
+.mobile-app__download-button:hover .mobile-app__download-button__icon path {
+  fill: #E1D4C9;
+}
+.mobile-app__download-button:hover .mobile-app__download-button__get-in-on,
+.mobile-app__download-button:hover .mobile-app__download-button__store {
+  color: #E1D4C9;
 }
 
 .mobile-app__download-button__description {
@@ -429,9 +499,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-.contacts__offer__socials__button svg:hover {
-  background: #E1D4C9;
+.contacts__offer__socials__button:hover {
+  background-color: #E1D4C9;
+}
+.contacts__offer__socials__button:hover .contacts__offer__socials__button__icon path {
+  stroke: #403F3D;
 }
 
 .contacts__info {
@@ -467,13 +541,18 @@
   width: fit-content;
 }
 
-.contacts__info__container__link:hover:after {
+.contacts__info__container__link:after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 2px;
   background: #E1D4C9;
+  left: 0;
   bottom: -3px;
+  transition: 0.3s ease-in-out;
+}
+.contacts__info__container__link:hover:after {
+  width: 100%;
 }
 
 .contacts__info__container__link__title {
@@ -493,6 +572,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .menu-container {
@@ -543,6 +623,9 @@
 .menu-container__button:hover .menu-container__button__text, .menu-container__radio:checked + .menu-container__button .menu-container__button__text {
   color: #E1D4C9;
 }
+.menu-container__radio:checked + .menu-container__button {
+  cursor: default;
+}
 
 .menu-container__button__icon-circle {
   fill: #C1B6AD;
@@ -563,9 +646,10 @@
   gap: 16px;
 }
 
-.card:hover {
-  cursor: pointer;
-  transform: scale(1.2);
+.menu-container__tab__grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -577,10 +661,16 @@
   flex-direction: column;
   text-align: left;
 }
+.card:hover {
+  cursor: pointer;
+}
+.card:hover .card__image {
+  background-size: 100%;
+}
 
 .card__image {
-  background: url(/coffee-house/images/coffee-1.png) no-repeat center;
-  background-size: cover;
+  background-position: center;
+  background-size: 110%;
   width: 310px;
   height: 310px;
   border-radius: 40px;
@@ -625,40 +715,4 @@
   font-weight: 600;
   line-height: 125%;
   color: #403F3D;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  transition: 0.3s;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #E1D4C9;
-}
-
-a {
-  text-decoration: none;
-}
-
-.main {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-}
-
-.container {
-  max-width: 1360px;
-  width: 100%;
-}
-
-.section {
-  display: flex;
-  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

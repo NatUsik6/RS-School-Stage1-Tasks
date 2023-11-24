@@ -8,11 +8,19 @@ $menu-image-size: 310px;
     display: flex;
     flex-direction: column;
     text-align: left;
+
+    &:hover {
+        cursor: pointer;
+
+        .card__image {
+            background-size: 100%;
+        }
+    }
 }
 
 .card__image {
-    background: url(/coffee-house/images/coffee-1.png) no-repeat center;
-    background-size: cover;
+    background-position: center;
+    background-size: 110%;
     width: $menu-image-size;
     height: $menu-image-size;
     border-radius: 40px;

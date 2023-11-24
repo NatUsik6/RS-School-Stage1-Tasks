@@ -42,9 +42,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
-    & svg:hover {
-        background: $background-light;
+    &:hover {
+        background-color: $background-light;
+
+        .contacts__offer__socials__button__icon path {
+            stroke: $text-dark;
+        }
     }
 }
 
@@ -75,13 +80,21 @@
     width: fit-content;
 }
 
-.contacts__info__container__link:hover:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: $text-light;
-    bottom: -3px;
+.contacts__info__container__link {
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: $text-light;
+        left: 0;
+        bottom: -3px;
+        transition: .3s ease-in-out;
+    }
+
+    &:hover:after {
+        width: 100%
+    }
 }
 
 .contacts__info__container__link__title {

@@ -51,6 +51,7 @@
     display: flex;
     flex-direction: column;
     width: 480px;
+    gap: 20px;
 }
 
 .coffee__image {
@@ -70,7 +71,7 @@
 }
 
 .coffee__description__text {
-    @include font(16px, 125%, $text-dark, 400);
+    @include font(16px, 150%, $text-dark, 400);
     text-align: center
 }
 

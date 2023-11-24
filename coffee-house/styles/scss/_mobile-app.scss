@@ -38,7 +38,22 @@
     border: 1px solid $border-container;
     background: transparent;
     display: flex;
+    align-items: center;
     gap: 8px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $background-container;
+
+        .mobile-app__download-button__icon path {
+            fill: $text-light;
+        }
+
+        .mobile-app__download-button__get-in-on,
+        .mobile-app__download-button__store {
+            color: $text-light;
+        }
+    }
 }
 
 .mobile-app__download-button__description {

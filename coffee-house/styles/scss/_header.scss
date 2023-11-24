@@ -13,11 +13,16 @@
     align-items: center;
 }
 
+.logo-container {
+    height: 60px;
+}
+
 .nav-container-list {
     display: flex;
     justify-content: center;
     gap: 40px;
     list-style: none;
+    padding-bottom: 4px;
 }
 
 .nav-container-list__link {
@@ -45,6 +50,7 @@
     display: flex;
     gap: 8px;
     position: relative;
+    padding-bottom: 4px;
 
     &:after {
         content: "";
@@ -52,7 +58,7 @@
         width: 0;
         height: 2px;
         background: $text-dark;
-        bottom: -3px;
+        bottom: 1px;
         left: 0;
         transition: .3s;
     }
@@ -64,7 +70,8 @@
 }
 
 .hero-container {
-    background: url(/coffee-house/images/img-hero.png), lightgray 50% / cover no-repeat;
+    background: url(/coffee-house/images/img-hero.png) center;
+    background-size: 100%;
     border-radius: 40px;
     padding: 100px;
 }
@@ -101,10 +108,14 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 0;
 
-    &:hover .hero-container-offer__button__icon {
-        width: 20px;
+    &:hover {
+        gap: 8px;
+
+        .hero-container-offer__button__icon {
+            width: 20px;
+        }
     }
 }
 
