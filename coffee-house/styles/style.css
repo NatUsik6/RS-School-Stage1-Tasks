@@ -112,7 +112,7 @@ a {
 }
 
 .hero-container {
-  background: url(images/img-hero.png) center;
+  background: url(../images/img-hero.png) center;
   background-size: 100%;
   border-radius: 40px;
   padding: 100px;
@@ -340,25 +340,25 @@ a {
 }
 
 .about__images__about1 {
-  background-image: url(images/about-1.png);
+  background-image: url(../images/about-1.png);
   background-position: center;
   height: 590px;
 }
 
 .about__images__about2 {
-  background-image: url(images/about-2.png);
+  background-image: url(../images/about-2.png);
   background-position: center;
   height: 430px;
 }
 
 .about__images__about3 {
-  background-image: url(images/about-3.png);
+  background-image: url(../images/about-3.png);
   background-position: center;
   height: 430px;
 }
 
 .about__images__about4 {
-  background-image: url(images/about-4.png);
+  background-image: url(../images/about-4.png);
   background-position: center;
   height: 590px;
 }
