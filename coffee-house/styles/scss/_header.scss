@@ -1,4 +1,6 @@
 .header {
+    @include side-margins;
+
     background-color: $background-light;
     display: flex;
     align-items: center;
@@ -71,7 +73,7 @@
 
 .hero-container {
     background: url(../images/img-hero.png) center;
-    background-size: 100%;
+    background-size: cover;
     border-radius: 40px;
     padding: 100px;
 }

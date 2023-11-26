@@ -20,6 +20,17 @@ $about-image-rectangle-height: 430px;
 .about__images-container {
     display: flex;
     gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: ($desktop - 1px)) {
+        flex-direction: column;
+
+        .about__images__about2,
+        .about__images__about3 {
+            display: none;
+        }
+    }
 }
 
 .about__images__column1,

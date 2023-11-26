@@ -3,6 +3,10 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
+
+    @media screen and (max-width: ($desktop - 1px)) {
+        flex-direction: column;
+    }
 }
 
 .mobile-app__content {

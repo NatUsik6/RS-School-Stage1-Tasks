@@ -25,6 +25,8 @@ a {
 }
 
 .container {
+    @include side-margins;
+    
     max-width: 1360px;
     width: 100%;
 }
