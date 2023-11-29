@@ -36,12 +36,15 @@
         height: 2px;
         background: $text-dark;
         bottom: -3px;
-        left: 0;
-        transition: .3s;
+        left: 50%;
+        opacity: 0;
+        transition: .5s ease-in-out;
     }
 
     &:hover:after {
+        left: 0;
         width: 100%;
+        opacity: 1;
     }
 }
 
@@ -59,13 +62,16 @@
         height: 2px;
         background: $text-dark;
         bottom: 1px;
-        left: 0;
-        transition: .3s;
+        left: 50%;
+        opacity: 0;
+        transition: .5s ease-in-out;
     }
 
     &_active:after,
     &:hover:after {
+        left: 0;
         width: 100%;
+        opacity: 1;
     }
 }
 
@@ -115,10 +121,12 @@
 
         .hero-container-offer__button__icon {
             width: 20px;
+            opacity: 1;
         }
     }
 }
 
 .hero-container-offer__button__icon {
     width: 0;
+    opacity: 0;
 }
