@@ -1,5 +1,5 @@
 .header {
-    @include side-margins;
+    @include side-paddings;
 
     background-color: $background-light;
     display: flex;

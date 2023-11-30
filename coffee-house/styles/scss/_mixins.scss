@@ -7,10 +7,12 @@
     color: $color;
 }
 
-@mixin side-margins {
-    margin: 0 40px;
+@mixin side-paddings {
+    padding-left: 40px;
+    padding-right: 40px;
 
     @media screen and (max-width: $mobile) {
-        margin: 0 16px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
