@@ -6,3 +6,13 @@
     line-height: $line-height;
     color: $color;
 }
+
+@mixin side-paddings {
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @media screen and (max-width: $mobile) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
