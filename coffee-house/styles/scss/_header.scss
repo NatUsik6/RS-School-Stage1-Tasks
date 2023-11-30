@@ -1,4 +1,6 @@
 .header {
+    @include side-paddings;
+
     background-color: $background-light;
     display: flex;
     align-items: center;

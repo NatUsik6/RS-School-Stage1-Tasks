@@ -2,14 +2,8 @@
     cursor: default;
 }
 
-.main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
 .menu-container {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,8 +14,7 @@
 .menu-container__title {
     @include font(60px, 125%, $text-dark);
     text-align: center;
-    width: 800px;
-    height: auto;
+    max-width: 800px;
 
     &_text-accent {
         font-style: italic;
@@ -80,4 +73,6 @@
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
