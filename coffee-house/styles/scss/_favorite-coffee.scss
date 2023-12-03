@@ -13,11 +13,16 @@
         font-style: italic;
         color: $text-accent;
     }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        font-size: 32px;
+    }
 }
 
 .favorite-coffee__slider {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 40px;
 }
 
@@ -25,6 +30,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        justify-content: center;
+    }
 }
 
 .favorite-coffee__slider__container__left-arrow-button,
@@ -39,12 +49,16 @@
     background: transparent;
     cursor: pointer;
 
-    &:hover {
+    @include hover {
         background-color: $background-container;
 
         .favorite-coffee__slider__container__arrow-button__icon {
             stroke: $text-light;
         }
+    }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        display: none;
     }
 }
 
@@ -57,7 +71,10 @@
 
 .coffee__image {
     width: 480px;
-    height: 480px;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        width: 100%;
+    }
 }
 
 .coffee__description {

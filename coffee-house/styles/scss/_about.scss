@@ -15,11 +15,26 @@ $about-image-rectangle-height: 430px;
         font-style: italic;
         color: $text-accent;
     }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        font-size: 32px;
+    }
 }
 
 .about__images-container {
     display: flex;
     gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: ($desktop - 1px)) {
+        flex-direction: column;
+
+        .about__images__about2,
+        .about__images__about3 {
+            display: none;
+        }
+    }
 }
 
 .about__images__column1,
@@ -27,14 +42,22 @@ $about-image-rectangle-height: 430px;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 100%;
 }
 
 .about-image {
-    width: $about-image-width;
     border-radius: 20px;
     background-size: 110%;
 
-    &:hover {
+    @media screen and (max-width: $tablet) {
+        background-size: 105%;
+    }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        background-size: auto 123%;
+    }
+
+    @include hover {
         background-size: 100%;
     }
 }
