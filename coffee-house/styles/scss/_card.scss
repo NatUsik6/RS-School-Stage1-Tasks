@@ -9,7 +9,7 @@ $menu-image-size: 310px;
     flex-direction: column;
     text-align: left;
 
-    &:hover {
+    @include hover {
         cursor: pointer;
 
         .card__image {

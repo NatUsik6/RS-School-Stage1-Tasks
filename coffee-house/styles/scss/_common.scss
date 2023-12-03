@@ -27,9 +27,7 @@ a {
     gap: 100px;
 }
 
-.container {
-    @include side-margins;
-    
+.container {    
     max-width: 1360px;
     width: 100%;
 }

@@ -16,3 +16,19 @@
         padding-right: 16px;
     }
 }
+
+@mixin hover {
+    @media screen and (min-width: ($tablet + 1px)) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin hover-after {
+    @media screen and (min-width: ($tablet + 1px)) {
+        &:hover:after {
+            @content;
+        }
+    }
+}

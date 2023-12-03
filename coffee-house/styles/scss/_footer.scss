@@ -15,6 +15,12 @@
 
     @media screen and (max-width: ($desktop - 1px)) {
         flex-direction: column;
+        padding: 100px 60px;
+    }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        padding: 60px 16px;
+        gap: 40px;
     }
 }
 
@@ -32,6 +38,14 @@
         font-style: italic;
         color: $text-accent;
         text-wrap: nowrap;
+    }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        font-size: 32px;
+        
+        &_text-accent {
+            text-wrap: wrap;
+        }
     }
 }
 
@@ -51,7 +65,7 @@
     align-items: center;
     cursor: pointer;
 
-    &:hover {
+    @include hover {
         background-color: $background-light;
 
         .contacts__offer__socials__button__icon path {
@@ -85,6 +99,7 @@
     gap: 8px;
     position: relative;
     width: fit-content;
+    padding-bottom: 4px;
 }
 
 .contacts__info__container__link {
@@ -100,7 +115,7 @@
         transition: .5s ease-in-out;
     }
 
-    &:hover:after {
+    @include hover-after {
         left: 0;
         width: 100%;
         opacity: 1;
