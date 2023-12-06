@@ -7,10 +7,13 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     background-color: $background-light;
+    overflow-x: hidden;
+    position: relative;
 }
 
 a {

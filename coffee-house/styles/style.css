@@ -7,10 +7,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: #E1D4C9;
+  overflow-x: hidden;
+  position: relative;
 }
 
 a {
@@ -84,13 +87,73 @@ a {
 }
 @media screen and (max-width: 768px) {
   .burger-button {
-    display: block;
+    display: flex;
   }
+}
+
+.burger-button__icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.burger-menu_open .burger-button__icon :nth-child(1) {
+  transform: translateY(4.5px) rotate(45deg);
+}
+.burger-menu_open .burger-button__icon :nth-child(2) {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+.burger-button__icon__line {
+  width: 16px;
+  height: 1px;
+  background-color: #403F3D;
+}
+
+.overlay {
+  visibility: collapse;
+  opacity: 0;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+}
+.burger-menu_open .overlay {
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
 }
 
 @media screen and (max-width: 768px) {
   .nav-container {
-    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E1D4C9;
+    z-index: 10;
+    top: 80px;
+    right: -100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    padding-top: 60px;
+  }
+  .nav-container .nav-container-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-container .nav-container-list__link,
+  .nav-container .nav-container__menu-link {
+    font-size: 32px;
+    line-height: 125%;
+  }
+  .burger-menu_open .nav-container {
+    right: 0;
   }
 }
 
@@ -128,6 +191,51 @@ a {
     width: 100%;
     opacity: 1;
   }
+}
+
+.nav-container__menu-link {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #403F3D;
+  display: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media screen and (max-width: 768px) {
+  .nav-container__menu-link {
+    display: flex;
+  }
+}
+.nav-container__menu-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #403F3D;
+  bottom: -3px;
+  left: 50%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+@media (hover: hover) {
+  .nav-container__menu-link:hover:after {
+    left: 0;
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.menu-link__icon {
+  width: 40px;
+  height: 40px;
 }
 
 .coffee-menu-link {
