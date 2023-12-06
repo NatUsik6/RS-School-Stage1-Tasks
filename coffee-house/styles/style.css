@@ -122,7 +122,7 @@ a {
   opacity: 0;
   transition: 0.5s ease-in-out;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .nav-container-list__link:hover:after {
     left: 0;
     width: 100%;
@@ -158,7 +158,7 @@ a {
   width: 100%;
   opacity: 1;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .coffee-menu-link:hover:after {
     left: 0;
     width: 100%;
@@ -216,6 +216,7 @@ a {
 @media screen and (max-width: 767px) {
   .hero-container-offer__title {
     font-size: 42px;
+    line-height: 115%;
   }
 }
 
@@ -246,7 +247,7 @@ a {
   align-items: center;
   gap: 0;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .hero-container-offer__button:hover {
     gap: 8px;
   }
@@ -327,7 +328,7 @@ a {
   background: transparent;
   cursor: pointer;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .favorite-coffee__slider__container__left-arrow-button:hover,
   .favorite-coffee__slider__container__right-arrow-button:hover {
     background-color: #665F55;
@@ -480,7 +481,7 @@ a {
     background-size: auto 123%;
   }
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .about-image:hover {
     background-size: 100%;
   }
@@ -578,7 +579,7 @@ a {
   gap: 8px;
   cursor: pointer;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .mobile-app__download-button:hover {
     background-color: #665F55;
   }
@@ -701,7 +702,7 @@ a {
   align-items: center;
   cursor: pointer;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .contacts__offer__socials__button:hover {
     background-color: #E1D4C9;
   }
@@ -755,7 +756,7 @@ a {
   bottom: -3px;
   transition: 0.5s ease-in-out;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .contacts__info__container__link:hover:after {
     left: 0;
     width: 100%;
@@ -820,7 +821,7 @@ a {
   background: transparent;
   cursor: pointer;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .menu-container__button:hover {
     background: #665F55;
   }
@@ -904,7 +905,7 @@ a {
   flex-direction: column;
   text-align: left;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) {
   .card:hover {
     cursor: pointer;
   }
