@@ -28,7 +28,7 @@
             <div class="overlay"></div>
             <nav class="nav-container">
                 <ul class="nav-container-list">
-                    <li class="nav-container-list__item"><a href="#section-favorite-coffee"
+                    <li class="nav-container-list__item"><a href="#favorite-coffee"
                             class="nav-container-list__link">Favorite coffee</a></li>
                     <li class="nav-container-list__item"><a href="#section-about"
                             class="nav-container-list__link">About</a></li>
@@ -37,7 +37,7 @@
                     <li class="nav-container-list__item"><a href="#section-contacts"
                             class="nav-container-list__link">Contact us</a></li>
                 </ul>
-                <a class="nav-container__menu-link">
+                <a class="nav-container__menu-link" href="menu.html">
                     Menu
                     <svg class="menu-link__icon" xmlns="http://www.w3.org/2000/svg" width="41" height="40"
                         viewBox="0 0 41 40" fill="none">
@@ -107,10 +107,10 @@
         </div>
     </header>
     <main class="main">
-        <section class="section favorite-coffee" id="section-favorite-coffee">
+        <section class="section favorite-coffee">
             <div class="container favorite-coffee__container">
-                <h2 class="favorite-coffee__title">Choose your <span
-                        class="favorite-coffee__title_text-accent">favorite</span> coffee</h2>
+                <h2 class="favorite-coffee__title" id="favorite-coffee">
+                    Choose your <span class="favorite-coffee__title_text-accent">favorite</span> coffee</h2>
                 <div class="favorite-coffee__slider">
                     <div class="favorite-coffee__slider__container">
                         <button class="favorite-coffee__slider__container__left-arrow-button">
@@ -121,13 +121,39 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="coffee">
-                            <img class="coffee__image" src="images/coffee-slider-1.png" alt="S’mores Frappuccino">
-                            <div class="coffee__description">
-                                <p class="coffee__description__title">S’mores Frappuccino</p>
-                                <p class="coffee__description__text">This new drink takes an espresso and mixes it with
-                                    brown sugar and cinnamon before being topped with oat milk.</p>
-                                <p class="coffee__description__cost">$5.50</p>
+                        <div class="slider-wrapper">
+                            <div class="slider">
+                                <figure class="coffee">
+                                    <img class="coffee__image" src="images/coffee-slider-1.png"
+                                        alt="S’mores Frappuccino">
+                                    <figcaption class="coffee__description">
+                                        <p class="coffee__description__title">S’mores Frappuccino</p>
+                                        <p class="coffee__description__text">
+                                            This new drink takes an espresso and mixes it with
+                                            brown sugar and cinnamon before being topped with oat milk.</p>
+                                        <p class="coffee__description__cost">$5.50</p>
+                                    </figcaption>
+                                </figure>
+                                <figure class="coffee">
+                                    <img class="coffee__image" src="images/coffee-slider-2.png"
+                                        alt="Caramel Macchiato">
+                                    <figcaption class="coffee__description">
+                                        <p class="coffee__description__title">Caramel Macchiato</p>
+                                        <p class="coffee__description__text">
+                                            Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+                                        <p class="coffee__description__cost">$5.00</p>
+                                    </figcaption>
+                                </figure>
+                                <figure class="coffee">
+                                    <img class="coffee__image" src="images/coffee-slider-3.png"
+                                        alt="Ice coffee">
+                                    <figcaption class="coffee__description">
+                                        <p class="coffee__description__title">Ice coffee</p>
+                                        <p class="coffee__description__text">
+                                            A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+                                        <p class="coffee__description__cost">$4.50</p>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
                         <button class="favorite-coffee__slider__container__right-arrow-button">
@@ -291,7 +317,8 @@
         </div>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/burger.js"></script>
+    <script src="scripts/slider.js"></script>
 </body>
 
 </html>

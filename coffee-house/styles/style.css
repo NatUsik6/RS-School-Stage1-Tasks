@@ -453,6 +453,16 @@ a {
   }
 }
 
+.slider-wrapper {
+  width: 480px;
+  overflow: hidden;
+  display: flex;
+}
+
+.slider {
+  display: flex;
+}
+
 .coffee {
   display: flex;
   flex-direction: column;
