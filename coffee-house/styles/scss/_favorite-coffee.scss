@@ -63,9 +63,24 @@
 }
 
 .slider-wrapper {
+    max-width: 480px;
     width: 480px;
     overflow: hidden;
-    display: flex;
+    container-type: inline-size;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        width: 100%;
+    }
+
+    @media (hover: hover) {
+        .favorite-coffee__slider__container:has(&:hover)~.favorite-coffee__slider__controls .slider__progress {
+            animation-play-state: paused;
+        }
+    }
+
+    .favorite-coffee__slider__container:has(&:active)~.favorite-coffee__slider__controls .slider__progress {
+        animation-play-state: paused;
+    }
 }
 
 .slider {
@@ -75,15 +90,20 @@
 .coffee {
     display: flex;
     flex-direction: column;
+    max-width: 480px;
     width: 480px;
     gap: 20px;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        width: 100cqw;
+    }
 }
 
 .coffee__image {
     width: 480px;
 
     @media screen and (max-width: ($tablet - 1px)) {
-        width: 100%;
+        max-width: 100cqw;
     }
 }
 
@@ -115,17 +135,33 @@
     gap: 12px;
 }
 
-.favorite-coffee__slider__controls_page1 {
-    width: 40px;
-    height: 4px;
-    background: $background-container;
-    border-radius: 100px;
-}
-
+.favorite-coffee__slider__controls_page1,
 .favorite-coffee__slider__controls_page2,
 .favorite-coffee__slider__controls_page3 {
     width: 40px;
     height: 4px;
     background: $border-light;
     border-radius: 100px;
+    overflow: hidden;
+}
+
+.slider__progress {
+    height: 100%;
+    background: $background-container;
+    width: 0;
+    border-radius: 100px;
+
+    &.active {
+        animation: slider-progress 6s linear;
+    }
+}
+
+@keyframes slider-progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
