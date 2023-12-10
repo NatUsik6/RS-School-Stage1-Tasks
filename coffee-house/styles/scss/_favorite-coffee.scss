@@ -85,6 +85,8 @@
 
 .slider {
     display: flex;
+    user-select: none;
+    touch-action: pan-y;
 }
 
 .coffee {
@@ -101,6 +103,7 @@
 
 .coffee__image {
     width: 480px;
+    pointer-events: none;
 
     @media screen and (max-width: ($tablet - 1px)) {
         max-width: 100cqw;

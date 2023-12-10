@@ -113,21 +113,6 @@ a {
   background-color: #403F3D;
 }
 
-.overlay {
-  visibility: collapse;
-  opacity: 0;
-  position: fixed;
-  top: 90px;
-  left: 0;
-  height: 100vh;
-  z-index: 1;
-}
-.burger-menu_open .overlay {
-  visibility: visible;
-  opacity: 1;
-  width: 100vw;
-}
-
 @media screen and (max-width: 768px) {
   .nav-container {
     position: absolute;
@@ -284,6 +269,8 @@ a {
   background-size: cover;
   border-radius: 40px;
   padding: 100px;
+  position: relative;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .hero-container {
@@ -296,12 +283,24 @@ a {
   }
 }
 
+.hero-container__video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .hero-container-offer {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 540px;
   height: auto;
   gap: 40px;
+  z-index: 3;
 }
 @media screen and (max-width: 768px) {
   .hero-container-offer {
@@ -475,6 +474,10 @@ a {
 
 .slider {
   display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  touch-action: pan-y;
 }
 
 .coffee {
@@ -492,6 +495,7 @@ a {
 
 .coffee__image {
   width: 480px;
+  pointer-events: none;
 }
 @media screen and (max-width: 767px) {
   .coffee__image {
@@ -1020,6 +1024,26 @@ a {
   }
 }
 
+.menu-container__tab-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.menu-container__tab {
+  opacity: 0;
+  transform: translateX(-100vw);
+  grid-column: 1;
+  grid-row: 1;
+  transition: 0.75s ease-in-out;
+}
+
+.menu-container__buttons-container:has(#coffee-button:checked) ~ .menu-container__tab-section .menu-container__tab-coffee,
+.menu-container__buttons-container:has(#tea-button:checked) ~ .menu-container__tab-section .menu-container__tab-tea,
+.menu-container__buttons-container:has(#dessert-button:checked) ~ .menu-container__tab-section .menu-container__tab-dessert {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .menu-container__tab__grid {
   display: flex;
   gap: 40px;
@@ -1028,7 +1052,7 @@ a {
   align-items: center;
 }
 @media screen and (max-width: 768px) {
-  .menu-container__tab__grid :nth-child(n+5) {
+  :not(.expanded) > .menu-container__tab__grid :nth-child(n+5) {
     display: none;
   }
 }
@@ -1044,6 +1068,9 @@ a {
 @media screen and (max-width: 768px) {
   .button-more {
     display: block;
+  }
+  .menu-container__buttons-container:has(#tea-button:checked) ~ .button-more, .menu-container__tab-section:has(.expanded) ~ .button-more {
+    display: none;
   }
 }
 

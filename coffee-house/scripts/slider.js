@@ -9,6 +9,8 @@ const sliderLeftArrowButton = document.querySelector(".favorite-coffee__slider__
 sliderLeftArrowButton.addEventListener("click", moveSliderRight);
 
 const sliderWrapper = document.querySelector(".slider-wrapper");
+sliderWrapper.addEventListener("touchstart", swipeStart);
+sliderWrapper.addEventListener("touchend", swipeEnd);
 const slider = document.querySelector(".slider");
 
 const sliderProgress1 = document.querySelector(".favorite-coffee__slider__controls_page1 .slider__progress");
@@ -56,5 +58,27 @@ function startSliderProgress() {
         case 2:
             sliderProgress3.classList.add("active");
             break;
+    }
+}
+
+let startTouchPosition;
+let endTouchPosition;
+
+function swipeStart(event) {
+    startTouchPosition = event.touches[0].clientX;
+    sliderProgressList.forEach(slider => slider.style.animationPlayState = "paused");
+}
+
+function swipeEnd(event) {
+    sliderProgressList.forEach(slider => slider.style.animationPlayState = "");
+    endTouchPosition = event.changedTouches[0].clientX;
+    let swipeLength = Math.abs(startTouchPosition - endTouchPosition);
+
+    if (swipeLength > sliderWrapper.offsetWidth / 3) {
+        if (startTouchPosition < endTouchPosition) {
+            moveSliderRight();
+        } else {
+            moveSliderLeft();
+        }
     }
 }

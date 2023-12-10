@@ -18,10 +18,10 @@ async function fillTabs() {
                 coffeeTabGrid.append(card);
                 break;
             case "tea":
-                //teaTabGrid.append(card);
+                teaTabGrid.append(card);
                 break;
             case "dessert":
-                //dessertTabGrid.append(card);
+                dessertTabGrid.append(card);
                 break;
         }
     }
@@ -58,4 +58,29 @@ function createCard(product) {
     card.append(cardImage, cardCaption);
 
     return card;
+}
+
+const buttonMore = document.querySelector(".button-more");
+buttonMore.addEventListener("click", expandTab);
+const radioButtons = document.querySelectorAll(".menu-container__radio");
+radioButtons.forEach(radioButton => radioButton.addEventListener("change", changeTab)); 
+
+const tabCoffee = document.querySelector(".menu-container__tab-coffee");
+const tabDessert = document.querySelector(".menu-container__tab-dessert");
+
+function expandTab() {
+    const checkedRadioButton = document.querySelector(".menu-container__radio:checked");
+
+    switch (checkedRadioButton.id) {
+        case "coffee-button":
+            tabCoffee.classList.add("expanded");
+            break;
+        case "dessert-button":
+            tabDessert.classList.add("expanded");
+            break;
+    }
+}
+
+function changeTab() {
+    document.querySelectorAll(".menu-container__tab").forEach(tab => tab.classList.remove("expanded"));
 }
