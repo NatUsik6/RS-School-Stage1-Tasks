@@ -99,6 +99,7 @@
     grid-column: 1;
     grid-row: 1;
     transition: .75s ease-in-out;
+    max-height: 0;
 }
 
 .menu-container__buttons-container:has(#coffee-button:checked)~.menu-container__tab-section .menu-container__tab-coffee,
@@ -106,6 +107,7 @@
 .menu-container__buttons-container:has(#dessert-button:checked)~.menu-container__tab-section .menu-container__tab-dessert {
     opacity: 1;
     transform: translateX(0);
+    max-height: 100%;
 }
 
 .menu-container__tab__grid {

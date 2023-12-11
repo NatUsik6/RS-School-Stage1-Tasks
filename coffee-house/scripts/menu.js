@@ -1,6 +1,7 @@
 "use strict";
 
-fillTabs();
+fillTabs()
+.then(loadModalScript);
 
 async function fillTabs() {
     let response = await fetch("resources/products.json");
@@ -63,7 +64,7 @@ function createCard(product) {
 const buttonMore = document.querySelector(".button-more");
 buttonMore.addEventListener("click", expandTab);
 const radioButtons = document.querySelectorAll(".menu-container__radio");
-radioButtons.forEach(radioButton => radioButton.addEventListener("change", changeTab)); 
+radioButtons.forEach(radioButton => radioButton.addEventListener("change", changeTab));
 
 const tabCoffee = document.querySelector(".menu-container__tab-coffee");
 const tabDessert = document.querySelector(".menu-container__tab-dessert");
@@ -83,4 +84,10 @@ function expandTab() {
 
 function changeTab() {
     document.querySelectorAll(".menu-container__tab").forEach(tab => tab.classList.remove("expanded"));
+}
+
+function loadModalScript() {
+    let script = document.createElement("script");
+    script.src = "scripts/modal.js";
+    document.body.append(script);
 }
