@@ -1,0 +1,208 @@
+html:has(.modal-opened),
+body:has(.modal-opened) {
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 10;
+    background-color: $background-backdrop;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    visibility: collapse;
+    opacity: 0;
+
+    .modal-opened & {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.modal {
+    display: flex;
+    gap: 20px;
+    padding: 16px;
+    max-width: 800px;
+    width: 100%;
+    position: fixed;
+    left: -100%;
+    top: 50%;
+    z-index: 20;
+    background-color: $background-light;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+
+    .modal-opened & {
+        left: 50%;
+    }
+
+    @media screen and (max-width: 880px) {
+        width: 90vw;
+    }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        .modal__image {
+            display: none;
+        }
+    }
+}
+
+.modal__image {
+    border-radius: 40px;
+    background-size: 110%;
+    width: $menu-image-size;
+    height: $menu-image-size;
+    flex-shrink: 0;
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal__description {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal__size-selector,
+.modal__additives {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal__description__title,
+.modal__total__text,
+.modal__total__cost {
+    @include font(24px, 125%, $text-dark);
+}
+
+.modal__description__text {
+    @include font(16px, 150%, $text-dark, 400);
+}
+
+.modal__size-selector-title,
+.modal__additives {
+    @include font(16px, 150%, $text-dark, 400);
+}
+
+.modal__size-selector__container,
+.modal__additives__container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.modal__radio,
+.modal__checkbox {
+    display: none;
+}
+
+.modal__button,
+.modal__button-additives {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px 8px 8px;
+    border-radius: 100px;
+    border: 1px solid $border-light;
+    background: transparent;
+    cursor: pointer;
+
+    @include hover {
+        background: $border-container;
+
+        .modal__button__icon,
+        .modal__button-additives__icon {
+            background-color: $background-light;
+        }
+
+        .modal__button__text,
+        .modal__button-additives__text {
+            color: $text-light;
+        }
+    }
+}
+
+.modal__radio:checked+.modal__button {
+    background: $border-container;
+    cursor: default;
+
+    .modal__button__icon {
+        background-color: $background-light;
+    }
+
+    .modal__button__text {
+        color: $text-light;
+    }
+}
+
+.modal__checkbox:checked+.modal__button-additives {
+    background: $border-container;
+
+    .modal__button-additives__icon {
+        background-color: $background-light;
+    }
+
+    .modal__button-additives__text {
+        color: $text-light;
+    }
+}
+
+.modal__button__icon,
+.modal__button-additives__icon {
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $border-light;
+    @include font(16px, 150%, $text-dark);
+}
+
+.modal__button__text,
+.modal__button-additives__text {
+    @include font(16px, 150%, $text-dark);
+
+}
+
+.modal__total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__alert {
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid $border-light;
+    padding: 12px 0;
+}
+
+.modal__alert__icon {
+    flex-shrink: 0;
+}
+
+.modal__alert__text {
+    @include font(10px, 140%, $text-dark);
+}
+
+.modal__button-close {
+    @include font(16px, 150%, $text-dark);
+    padding: 10px 48px;
+    border-radius: 100px;
+    border: 1px solid $border-container;
+    background: transparent;
+    cursor: pointer;
+
+    @include hover {
+        background: $border-container;
+        color: $text-light;
+    }
+}
