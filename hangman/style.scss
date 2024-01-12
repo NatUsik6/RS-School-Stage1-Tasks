@@ -6,7 +6,6 @@
 
 .main {
     display: flex;
-    flex-direction: column;
 }
 
 .section {
@@ -14,16 +13,46 @@
     margin: auto;
 }
 
+.keyboard-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 0;
+}
+
+.word-container {
+    background-color: #7B8271;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.letter-container {
+    font-size: 16px;
+    color: #fff;
+    background-color: #2a2f257a;
+    border-radius: 5px;
+    margin: 3px;
+    width: 45px;
+    min-width: 45px;
+    height: 45px;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .keyboard {
     background-color: #7B8271;
     padding: 10px;
     border-radius: 10px;
     display: inline-block;
-    width: 765px;
 }
 
 .keyboard-row {
     display: flex;
+    justify-content: center;
 }
 
 .keyboard-button {
