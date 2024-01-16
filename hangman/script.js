@@ -130,6 +130,11 @@ const fillKeyboard = (keyboard) => {
 
     document.addEventListener("keydown", (event) => {
         event.preventDefault();
+
+        if (document.querySelector(".modal-window-container").classList.contains("active")) {
+            return;
+        }
+        
         const key = document.querySelector(`.${event.code}`);
 
         if (!key.classList.contains("active")) {
