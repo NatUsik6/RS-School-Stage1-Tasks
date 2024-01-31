@@ -1,4 +1,16 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+.table {
+  width: 75vmin;
+  height: 75vmin;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.cell {
+  border-left: 1px solid #aaa;
+  border-top: 1px solid #aaa;
 }/*# sourceMappingURL=style.css.map */
