@@ -8,6 +8,7 @@
   height: 75vmin;
   border-collapse: collapse;
   border: 1px solid black;
+  table-layout: fixed;
 }
 
 .cell {
