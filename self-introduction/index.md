@@ -1,4 +1,6 @@
-https://youtu.be/A2bmbtUTuTQ
+[Link to the video](https://youtu.be/A2bmbtUTuTQ)
+
+## Transcript:
 
 Hi everyone! My name is Natali, I’m 22. I’m from Mogilev, Belarus. And I am frontend developer.
 
