@@ -39,5 +39,5 @@ export interface RequestModel {
 
 export interface RequestOptions {
     apiKey: string;
-    sources: string;
+    sources?: string;
 }
