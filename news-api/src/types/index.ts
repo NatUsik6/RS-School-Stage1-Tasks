@@ -19,13 +19,25 @@ export interface Source {
     country: string;
 }
 
-export interface EverythingResponse {
+export interface ResponseModel {
     status: string;
+}
+
+export interface EverythingResponse extends ResponseModel {
     totalResults: number;
     articles: Article[];
 }
 
-export interface SourcesResponse {
-    status: string;
+export interface SourcesResponse extends ResponseModel {
     sources: Source[];
+}
+
+export interface RequestModel {
+    endpoint: string;
+    options: RequestOptions;
+}
+
+export interface RequestOptions {
+    apiKey: string;
+    sources: string;
 }
