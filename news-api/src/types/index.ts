@@ -34,10 +34,10 @@ export interface SourcesResponse extends ResponseModel {
 
 export interface RequestModel {
     endpoint: string;
-    options: RequestOptions;
+    options?: RequestOptions;
 }
 
 export interface RequestOptions {
-    apiKey: string;
+    apiKey?: string;
     sources?: string;
 }
