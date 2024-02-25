@@ -1,5 +1,5 @@
 export interface Article {
-    source: { id: string; name: string };
+    source: Source;
     author: string;
     title: string;
     description: string;
@@ -7,4 +7,9 @@ export interface Article {
     urlToImage: string;
     publishedAt: string;
     content: string;
+}
+
+export interface Source {
+    id: string;
+    name: string;
 }
