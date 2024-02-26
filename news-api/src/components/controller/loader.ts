@@ -15,9 +15,7 @@ class Loader {
             console.error('No callback for GET response');
         }
     ) {
-        if (options) {
-            this.load('GET', endpoint, callback, options);
-        }
+        this.load('GET', endpoint, callback, options);
     }
 
     errorHandler(res: Response) {
@@ -30,7 +28,7 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: RequestOptions, endpoint: string) {
+    makeUrl(endpoint: string, options?: RequestOptions) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -41,8 +39,8 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: (data: ResponseModel) => void, options: RequestOptions) {
-        fetch(this.makeUrl(options, endpoint), { method })
+    load(method: string, endpoint: string, callback: (data: ResponseModel) => void, options?: RequestOptions) {
+        fetch(this.makeUrl(endpoint, options), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
             .then((data) => callback(data))
