@@ -1,3 +1,4 @@
+const DotenvWebpackPlugin = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
@@ -6,4 +7,9 @@ module.exports = {
     devServer: {
         static: path.resolve(__dirname, './dist'),
     },
+    plugins: [
+        new DotenvWebpackPlugin({
+            path: `./.env.development`,
+        }),
+    ],
 };
