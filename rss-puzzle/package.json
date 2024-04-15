@@ -1,12 +1,11 @@
 {
-  "dependencies": {
-    "typescript": "^5.4.2"
-  },
   "scripts": {
     "format": "prettier . --write",
     "ci:format": "prettier . --list-different",
     "lint": "eslint . --ext .ts",
-    "prepare": "cd .. && husky rss-puzzle/.husky"
+    "prepare": "cd .. && husky rss-puzzle/.husky",
+    "build": "webpack",
+    "serve": "webpack-dev-server"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.1.1",
@@ -17,7 +16,10 @@
     "eslint-plugin-prettier": "^5.1.3",
     "husky": "^9.0.11",
     "prettier": "3.2.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
     "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   }
 }
