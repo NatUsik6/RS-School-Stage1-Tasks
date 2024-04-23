@@ -1,0 +1,170 @@
+.favorite-coffee__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.favorite-coffee__title {
+    @include font(60px, 125%, $text-dark);
+    text-align: center;
+
+    &_text-accent {
+        font-style: italic;
+        color: $text-accent;
+    }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        font-size: 32px;
+    }
+}
+
+.favorite-coffee__slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.favorite-coffee__slider__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        justify-content: center;
+    }
+}
+
+.favorite-coffee__slider__container__left-arrow-button,
+.favorite-coffee__slider__container__right-arrow-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    border: 1px solid $background-container;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+
+    @include hover {
+        background-color: $background-container;
+
+        .favorite-coffee__slider__container__arrow-button__icon {
+            stroke: $text-light;
+        }
+    }
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        display: none;
+    }
+}
+
+.slider-wrapper {
+    max-width: 480px;
+    width: 480px;
+    overflow: hidden;
+    container-type: inline-size;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        width: 100%;
+    }
+
+    @media (hover: hover) {
+        .favorite-coffee__slider__container:has(&:hover)~.favorite-coffee__slider__controls .slider__progress {
+            animation-play-state: paused;
+        }
+    }
+
+    .favorite-coffee__slider__container:has(&:active)~.favorite-coffee__slider__controls .slider__progress {
+        animation-play-state: paused;
+    }
+}
+
+.slider {
+    display: flex;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.coffee {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    width: 480px;
+    gap: 20px;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        width: 100cqw;
+    }
+}
+
+.coffee__image {
+    width: 480px;
+    pointer-events: none;
+
+    @media screen and (max-width: ($tablet - 1px)) {
+        max-width: 100cqw;
+    }
+}
+
+.coffee__description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.coffee__description__title {
+    @include font(24px, 125%, $text-dark);
+    text-align: center
+}
+
+.coffee__description__text {
+    @include font(16px, 150%, $text-dark, 400);
+    text-align: center
+}
+
+.coffee__description__cost {
+    @include font(24px, 125%, $text-dark);
+    text-align: center;
+}
+
+.favorite-coffee__slider__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.favorite-coffee__slider__controls_page1,
+.favorite-coffee__slider__controls_page2,
+.favorite-coffee__slider__controls_page3 {
+    width: 40px;
+    height: 4px;
+    background: $border-light;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.slider__progress {
+    height: 100%;
+    background: $background-container;
+    width: 0;
+    border-radius: 100px;
+
+    &.active {
+        animation: slider-progress 6s linear;
+    }
+}
+
+@keyframes slider-progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
