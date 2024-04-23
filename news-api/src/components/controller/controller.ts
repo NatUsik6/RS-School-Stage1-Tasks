@@ -1,4 +1,4 @@
-import { EverythingResponse, SourcesResponse } from '../../types/index';
+import { EverythingResponse, SourcesResponse } from '../../types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {

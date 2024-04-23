@@ -1,4 +1,4 @@
-import { Source } from '../../../types/index';
+import { Source } from '../../../types';
 import './sources.css';
 
 class Sources {

@@ -41,3 +41,8 @@ export interface RequestOptions {
     apiKey?: string;
     sources?: string;
 }
+
+export enum StatusCodes {
+    Unauthorized = 401,
+    NotFound = 404,
+}

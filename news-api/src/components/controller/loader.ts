@@ -1,13 +1,10 @@
-import { RequestModel, RequestOptions, ResponseModel } from '../../types/index';
+import { RequestModel, RequestOptions, ResponseModel, StatusCodes } from '../../types';
 
 class Loader {
-    baseLink: string;
-    options: RequestOptions;
-
-    constructor(baseLink: string, options: RequestOptions) {
-        this.baseLink = baseLink;
-        this.options = options;
-    }
+    constructor(
+        private baseLink: string,
+        private options: RequestOptions
+    ) {}
 
     getResp(
         { endpoint, options }: RequestModel,
@@ -20,7 +17,7 @@ class Loader {
 
     errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === StatusCodes.Unauthorized || res.status === StatusCodes.NotFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
