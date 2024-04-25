@@ -19,7 +19,11 @@ class Sources {
             fragment.append(sourceClone);
         });
 
-        (document.querySelector('.sources') as HTMLDivElement).append(fragment);
+        const sources = document.querySelector('.sources') as HTMLDivElement;
+        sources.append(fragment);
+
+        const buttonMore = document.querySelector('.button-more') as HTMLButtonElement;
+        buttonMore.addEventListener('click', () => sources.classList.toggle('collapse'));
     }
 }
 

@@ -1,11 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
+    min-height: 100vh;
 }
 
 header {
-    padding: 10px 30px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
 }
 
 header h1 {
@@ -13,12 +28,66 @@ header h1 {
     font-weight: 800;
 }
 
+main {
+    height: 100%;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button-more {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    border: 1px solid white;
+    background-color: transparent;
+    display: block;
+}
+
 footer {
+    background-color: #12121280;
+    backdrop-filter: blur(10px);
     height: 100px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rss {
+    background-image: url(./rs_school_js.svg);
+    width: 121px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    color: transparent;
+}
+
+.github {
+    text-decoration: none;
+    color: #9aa0a6;
+    line-height: 45px;
+    font-size: 20px;
+    font-weight: 300;
+    transition: .3s;
+
+    &:hover {
+        color: white;
+    }
+}
+
 footer .copyright {
     font-size: 14px;
     color: #333;
