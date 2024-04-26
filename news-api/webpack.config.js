@@ -17,7 +17,7 @@ const baseConfig = {
                 test: /\.ts$/i,
                 use: 'ts-loader',
                 include: [path.resolve(__dirname, './src')],
-            }
+            },
         ],
     },
     resolve: {
@@ -26,17 +26,17 @@ const baseConfig = {
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/'
+        publicPath: '',
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/index.html'),
+            template: path.resolve(__dirname, 'src/index.html'),
             filename: 'index.html',
-            favicon: './src/favicon.ico'
+            favicon: 'src/favicon.ico',
         }),
         new HtmlWebpackInlineSVGPlugin({
             runPreEmit: true,
-        }),      
+        }),
         new CleanWebpackPlugin(),
         new EslintPlugin({ extensions: 'ts' }),
     ],
